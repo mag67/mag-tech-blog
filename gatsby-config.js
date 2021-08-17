@@ -4,4 +4,5 @@ module.exports = {
     title: "mag-tech-blog",
   },
   plugins: ["gatsby-plugin-gatsby-cloud"],
+  pathPrefix: "/mag-tech-blog",
 };
