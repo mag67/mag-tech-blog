@@ -16,7 +16,12 @@ module.exports = {
     },
     "gatsby-plugin-mdx",
     "gatsby-transformer-sharp",
-    `gatsby-plugin-typegen`,
+    {
+      resolve: "gatsby-plugin-typegen",
+      options: {
+        outputPath: `src/__generated__/gatsby-types.d.ts`,
+      },
+    },
   ],
   pathPrefix: "/mag-tech-blog",
 };

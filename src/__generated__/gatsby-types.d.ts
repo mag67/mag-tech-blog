@@ -679,6 +679,7 @@ type SitePluginPluginOptions = {
   readonly lessBabel: Maybe<Scalars['Boolean']>;
   readonly mediaTypes: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
   readonly root: Maybe<Scalars['String']>;
+  readonly outputPath: Maybe<Scalars['String']>;
   readonly pathCheck: Maybe<Scalars['Boolean']>;
   readonly allExtensions: Maybe<Scalars['Boolean']>;
   readonly isTSX: Maybe<Scalars['Boolean']>;
@@ -2376,6 +2377,7 @@ type SitePluginPluginOptionsFilterInput = {
   readonly lessBabel: Maybe<BooleanQueryOperatorInput>;
   readonly mediaTypes: Maybe<StringQueryOperatorInput>;
   readonly root: Maybe<StringQueryOperatorInput>;
+  readonly outputPath: Maybe<StringQueryOperatorInput>;
   readonly pathCheck: Maybe<BooleanQueryOperatorInput>;
   readonly allExtensions: Maybe<BooleanQueryOperatorInput>;
   readonly isTSX: Maybe<BooleanQueryOperatorInput>;
@@ -2613,6 +2615,7 @@ type SitePageFieldsEnum =
   | 'pluginCreator.pluginOptions.lessBabel'
   | 'pluginCreator.pluginOptions.mediaTypes'
   | 'pluginCreator.pluginOptions.root'
+  | 'pluginCreator.pluginOptions.outputPath'
   | 'pluginCreator.pluginOptions.pathCheck'
   | 'pluginCreator.pluginOptions.allExtensions'
   | 'pluginCreator.pluginOptions.isTSX'
@@ -3242,6 +3245,7 @@ type SitePluginFieldsEnum =
   | 'pluginOptions.lessBabel'
   | 'pluginOptions.mediaTypes'
   | 'pluginOptions.root'
+  | 'pluginOptions.outputPath'
   | 'pluginOptions.pathCheck'
   | 'pluginOptions.allExtensions'
   | 'pluginOptions.isTSX'
@@ -3449,20 +3453,20 @@ type allBlogOrderedByDateDescQuery = { readonly allMdx: { readonly nodes: Readon
       & { readonly frontmatter: Maybe<Pick<MdxFrontmatter, 'date' | 'title'>> }
     )> } };
 
-type userskomuroyuusakuworkspacemagTechBlogsrcpagesblogindexJs3051230978QueryVariables = Exact<{ [key: string]: never; }>;
+type allBlogPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type userskomuroyuusakuworkspacemagTechBlogsrcpagesblogindexJs3051230978Query = { readonly allMdx: { readonly nodes: ReadonlyArray<(
-      Pick<Mdx, 'id' | 'body' | 'slug'>
+type allBlogPageQuery = { readonly allMdx: { readonly nodes: ReadonlyArray<(
+      Pick<Mdx, 'id' | 'slug'>
       & { readonly frontmatter: Maybe<Pick<MdxFrontmatter, 'date' | 'title'>> }
     )> } };
 
-type userskomuroyuusakuworkspacemagTechBlogsrcpagesblogmdxSlugJs324258599QueryVariables = Exact<{
+type blogInfoQueryVariables = Exact<{
   id: Maybe<Scalars['String']>;
 }>;
 
 
-type userskomuroyuusakuworkspacemagTechBlogsrcpagesblogmdxSlugJs324258599Query = { readonly mdx: Maybe<(
+type blogInfoQuery = { readonly mdx: Maybe<(
     Pick<Mdx, 'body'>
     & { readonly frontmatter: Maybe<(
       Pick<MdxFrontmatter, 'title' | 'date' | 'hero_image_alt' | 'hero_image_credit_link' | 'hero_image_credit_text'>
@@ -3470,18 +3474,10 @@ type userskomuroyuusakuworkspacemagTechBlogsrcpagesblogmdxSlugJs324258599Query =
     )> }
   )> };
 
-type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
+type siteTitleQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type Unnamed_1_Query = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
-
-type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type Unnamed_2_Query = { readonly allMdx: { readonly nodes: ReadonlyArray<(
-      Pick<Mdx, 'id' | 'body'>
-      & { readonly frontmatter: Maybe<Pick<MdxFrontmatter, 'date' | 'title'>> }
-    )> } };
+type siteTitleQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
 
 type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 
@@ -3508,13 +3504,5 @@ type GatsbyImageSharpFluid_withWebp_tracedSVGFragment = Pick<ImageSharpFluid, 't
 type GatsbyImageSharpFluid_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>;
 
 type GatsbyImageSharpFluid_withWebp_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
-
-type userskomuroyuusakuworkspacemagTechBlogsrcpagesblogTsx189532023QueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type userskomuroyuusakuworkspacemagTechBlogsrcpagesblogTsx189532023Query = { readonly allMdx: { readonly nodes: ReadonlyArray<(
-      Pick<Mdx, 'id' | 'body'>
-      & { readonly frontmatter: Maybe<Pick<MdxFrontmatter, 'date' | 'title'>> }
-    )> } };
 
 }
