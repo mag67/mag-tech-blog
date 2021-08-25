@@ -633,6 +633,10 @@ type SitePlugin = Node & {
 };
 
 type SitePluginPluginOptions = {
+  readonly sourceMap: Maybe<Scalars['Boolean']>;
+  readonly autoLabel: Maybe<Scalars['String']>;
+  readonly labelFormat: Maybe<Scalars['String']>;
+  readonly cssPropOptimization: Maybe<Scalars['Boolean']>;
   readonly base64Width: Maybe<Scalars['Int']>;
   readonly stripMetadata: Maybe<Scalars['Boolean']>;
   readonly defaultQuality: Maybe<Scalars['Int']>;
@@ -2066,6 +2070,10 @@ type SitePluginFilterInput = {
 };
 
 type SitePluginPluginOptionsFilterInput = {
+  readonly sourceMap: Maybe<BooleanQueryOperatorInput>;
+  readonly autoLabel: Maybe<StringQueryOperatorInput>;
+  readonly labelFormat: Maybe<StringQueryOperatorInput>;
+  readonly cssPropOptimization: Maybe<BooleanQueryOperatorInput>;
   readonly base64Width: Maybe<IntQueryOperatorInput>;
   readonly stripMetadata: Maybe<BooleanQueryOperatorInput>;
   readonly defaultQuality: Maybe<IntQueryOperatorInput>;
@@ -2301,6 +2309,10 @@ type SitePageFieldsEnum =
   | 'pluginCreator.resolve'
   | 'pluginCreator.name'
   | 'pluginCreator.version'
+  | 'pluginCreator.pluginOptions.sourceMap'
+  | 'pluginCreator.pluginOptions.autoLabel'
+  | 'pluginCreator.pluginOptions.labelFormat'
+  | 'pluginCreator.pluginOptions.cssPropOptimization'
   | 'pluginCreator.pluginOptions.base64Width'
   | 'pluginCreator.pluginOptions.stripMetadata'
   | 'pluginCreator.pluginOptions.defaultQuality'
@@ -2881,6 +2893,10 @@ type SitePluginFieldsEnum =
   | 'resolve'
   | 'name'
   | 'version'
+  | 'pluginOptions.sourceMap'
+  | 'pluginOptions.autoLabel'
+  | 'pluginOptions.labelFormat'
+  | 'pluginOptions.cssPropOptimization'
   | 'pluginOptions.base64Width'
   | 'pluginOptions.stripMetadata'
   | 'pluginOptions.defaultQuality'
