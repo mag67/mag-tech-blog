@@ -45,6 +45,8 @@ module.exports = {
     ],
     'react/no-unescaped-entities': 0,
     'import/no-unresolved': 'off',
+    'react/jsx-uses-react': 'off',
+    'react/react-in-jsx-scope': 'off',
   },
   overrides: [
     {
