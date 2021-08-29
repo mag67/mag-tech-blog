@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkmag_tech_blog=self.webpackChunkmag_tech_blog||[]).push([[49],{8509:function(e,t,a){a.r(t);var c=a(2217),l=a(7918);t.default=function(){return(0,l.tZ)(c.Z,null,(0,l.tZ)("p",{css:u},"about"))};var u={name:"1e0dqk7",styles:"color:black"}}}]);
+//# sourceMappingURL=component---src-pages-about-tsx-b413189bc9a5865c0ed3.js.map

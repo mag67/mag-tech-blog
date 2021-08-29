@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkmag_tech_blog=self.webpackChunkmag_tech_blog||[]).push([[451],{8449:function(e,l,t){t.r(l);var c=t(2217),n=t(7918);l.default=function(){return(0,n.tZ)(c.Z,null,(0,n.tZ)("p",{css:s},"links"))};var s={name:"1e0dqk7",styles:"color:black"}}}]);
+//# sourceMappingURL=component---src-pages-link-tsx-55fe1b527a1beed1365b.js.map

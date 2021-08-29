@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkmag_tech_blog=self.webpackChunkmag_tech_blog||[]).push([[410],{7778:function(e,l,t){t.r(l);var c=t(2217),a=t(7918);l.default=function(){return(0,a.tZ)(c.Z,null,(0,a.tZ)("p",{css:n},"blog"))};var n={name:"1e0dqk7",styles:"color:black"}}}]);
+//# sourceMappingURL=component---src-pages-blog-tsx-4afde6dab629da53edb4.js.map
