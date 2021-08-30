@@ -3,11 +3,15 @@ import NavTop from './nav-top';
 import NavMenu from './nav-menu';
 
 const Header = () => (
-  <header css={isFixed}>
+  <header css={[header, isFixed]}>
     <NavTop />
     <NavMenu />
   </header>
 );
+
+const header = css`
+  z-index: 1;
+`;
 
 const isFixed = css`
   position: -webkit-sticky;
