@@ -14,7 +14,14 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: `blog`,
-        path: `${__dirname}/blog`,
+        path: `${__dirname}/static/blogs`,
+      },
+    },
+    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-remark-images`,
+      options: {
+        maxWidth: 400,
       },
     },
     'gatsby-plugin-mdx',
