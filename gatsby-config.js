@@ -32,6 +32,12 @@ module.exports = {
         outputPath: `src/__generated__/gatsby-types.d.ts`,
       },
     },
+    {
+      resolve: `gatsby-plugin-lodash`,
+      options: {
+        disabledFeatures: [`shorthands`, `cloning`],
+      },
+    },
   ],
   pathPrefix: '/mag-tech-blog',
 };

@@ -5,7 +5,7 @@ title: "メタプログラミングRuby入門ですメタプログラミング"
 image: "./MetaprogrammingRuby2.jpeg"
 image_alt: "俺です"
 description: "メタプログラミングRuby入門ですメタプログラミング" 
-tags: ["blog","react","typescript"]
+tags: ["Blog","Ruby","RubyonRails"]
 ---
 
 This is my first blog post! Isn't it *great*?

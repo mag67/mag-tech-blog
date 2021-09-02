@@ -5,7 +5,7 @@ title: "大阪　ルシェルシェ"
 image: "./rche-rche.jpg"
 image_alt: "俺です"
 description: "my favorite cake!!!!!!!!!!!!!!" 
-tags: ["blog","sweets"]
+tags: ["Blog","Sweets"]
 ---
 
 Gatsby: The Definitive Guide *great*?
