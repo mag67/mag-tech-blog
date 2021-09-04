@@ -317,6 +317,7 @@ type SitePage = Node & {
 
 type SitePageContext = {
   readonly slug: Maybe<Scalars['String']>;
+  readonly tag: Maybe<Scalars['String']>;
 };
 
 type MarkdownHeading = {
@@ -759,6 +760,7 @@ type SitePluginPluginOptions = {
   readonly mediaTypes: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
   readonly root: Maybe<Scalars['String']>;
   readonly outputPath: Maybe<Scalars['String']>;
+  readonly disabledFeatures: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
   readonly pathCheck: Maybe<Scalars['Boolean']>;
   readonly allExtensions: Maybe<Scalars['Boolean']>;
   readonly isTSX: Maybe<Scalars['Boolean']>;
@@ -2449,6 +2451,7 @@ type SiteFunctionSortInput = {
 
 type SitePageContextFilterInput = {
   readonly slug: Maybe<StringQueryOperatorInput>;
+  readonly tag: Maybe<StringQueryOperatorInput>;
 };
 
 type SitePluginFilterInput = {
@@ -2496,6 +2499,7 @@ type SitePluginPluginOptionsFilterInput = {
   readonly mediaTypes: Maybe<StringQueryOperatorInput>;
   readonly root: Maybe<StringQueryOperatorInput>;
   readonly outputPath: Maybe<StringQueryOperatorInput>;
+  readonly disabledFeatures: Maybe<StringQueryOperatorInput>;
   readonly pathCheck: Maybe<BooleanQueryOperatorInput>;
   readonly allExtensions: Maybe<BooleanQueryOperatorInput>;
   readonly isTSX: Maybe<BooleanQueryOperatorInput>;
@@ -2680,6 +2684,7 @@ type SitePageFieldsEnum =
   | 'internal.type'
   | 'isCreatedByStatefulCreatePages'
   | 'context.slug'
+  | 'context.tag'
   | 'pluginCreator.id'
   | 'pluginCreator.parent.id'
   | 'pluginCreator.parent.parent.id'
@@ -2749,6 +2754,7 @@ type SitePageFieldsEnum =
   | 'pluginCreator.pluginOptions.mediaTypes'
   | 'pluginCreator.pluginOptions.root'
   | 'pluginCreator.pluginOptions.outputPath'
+  | 'pluginCreator.pluginOptions.disabledFeatures'
   | 'pluginCreator.pluginOptions.pathCheck'
   | 'pluginCreator.pluginOptions.allExtensions'
   | 'pluginCreator.pluginOptions.isTSX'
@@ -3593,6 +3599,7 @@ type SitePluginFieldsEnum =
   | 'pluginOptions.mediaTypes'
   | 'pluginOptions.root'
   | 'pluginOptions.outputPath'
+  | 'pluginOptions.disabledFeatures'
   | 'pluginOptions.pathCheck'
   | 'pluginOptions.allExtensions'
   | 'pluginOptions.isTSX'
@@ -3800,15 +3807,28 @@ type userskomuroyuusakuworkspacemagTechBlogsrctemplatespostTsx1250348784Query = 
     )> }
   )> };
 
+type userskomuroyuusakuworkspacemagTechBlogsrctemplatestagTsx731570395QueryVariables = Exact<{
+  tag: Scalars['String'];
+}>;
+
+
+type userskomuroyuusakuworkspacemagTechBlogsrctemplatestagTsx731570395Query = { readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: Maybe<(
+          Pick<MarkdownRemarkFrontmatter, 'title' | 'tags' | 'slug' | 'image_alt' | 'description'>
+          & { readonly image: Maybe<{ readonly childImageSharp: Maybe<Pick<ImageSharp, 'gatsbyImageData'>> }> }
+        )> } }> } };
+
 type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type PagesQueryQuery = { readonly allSiteFunction: { readonly nodes: ReadonlyArray<Pick<SiteFunction, 'functionRoute'>> }, readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
 
-type AllBlogsQueryVariables = Exact<{ [key: string]: never; }>;
+type AllTagandBlogQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type AllBlogsQuery = { readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: Maybe<(
+type AllTagandBlogQuery = { readonly allMarkdownRemark: { readonly tagsGroup: ReadonlyArray<(
+      Pick<MarkdownRemarkGroupConnection, 'totalCount'>
+      & { tag: MarkdownRemarkGroupConnection['fieldValue'] }
+    )>, readonly blogs: ReadonlyArray<{ readonly node: { readonly frontmatter: Maybe<(
           Pick<MarkdownRemarkFrontmatter, 'date' | 'description' | 'slug' | 'tags' | 'title'>
           & { readonly image: Maybe<{ readonly childImageSharp: Maybe<Pick<ImageSharp, 'gatsbyImageData'>> }> }
         )> } }> } };

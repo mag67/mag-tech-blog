@@ -3,25 +3,27 @@ import { css } from '@emotion/react';
 import { graphql } from 'gatsby';
 import Blogs from '../components/blogs';
 import Layout from '../components/layout';
+import TagBox from '../components/tag-box';
 
 const BlogPage: VFC = ({
   data: {
-    allMarkdownRemark: { edges },
+    allMarkdownRemark: { tagsGroup, blogs },
   },
 }) => (
   <Layout>
-    <div>タグ一覧</div>
-    <Blogs edges={edges} />
+    <TagBox group={tagsGroup} />
+    <Blogs edges={blogs} />
   </Layout>
 );
 
 export const allBlogs = graphql`
-  query AllBlogs {
-    allMarkdownRemark(
-      sort: { fields: id, order: ASC }
-      filter: { frontmatter: { tags: { in: "blog" } } }
-    ) {
-      edges {
+  query AllTagandBlog {
+    allMarkdownRemark {
+      tagsGroup: group(field: frontmatter___tags) {
+        tag: fieldValue
+        totalCount
+      }
+      blogs: edges {
         node {
           frontmatter {
             date(formatString: "YYYY/MM/DD")
