@@ -2274,7 +2274,7 @@
   dependencies:
     "@types/node" "*"
 
-"@types/lodash@^4.14.92":
+"@types/lodash@^4.14.172", "@types/lodash@^4.14.92":
   version "4.14.172"
   resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.172.tgz#aad774c28e7bfd7a67de25408e03ee5a8c3d028a"
   integrity sha512-/BHF5HAx3em7/KkzVKm3LrsD6HZAXuXO1AJZQ3cRRBZj4oHZDviWPYu0aEplAqDFNHZPW6d3G7KN+ONcCCC7pw==
@@ -6671,6 +6671,15 @@ gatsby-plugin-image@^1.12.0:
     objectFitPolyfill "^2.3.0"
     prop-types "^15.7.2"
 
+gatsby-plugin-lodash@^4.13.0:
+  version "4.13.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-lodash/-/gatsby-plugin-lodash-4.13.0.tgz#776cf39610db94f71fb468fa1e8e4556689bfcac"
+  integrity sha512-v+zCwcjNw9grr2vaqeqoer18KMEToQHvvK0zA3tHNPQtTWyhgwyVnTgemM2TbYb2PUi7Kv0+wMI1gSqy+jj79g==
+  dependencies:
+    "@babel/runtime" "^7.14.8"
+    babel-plugin-lodash "^3.3.4"
+    lodash-webpack-plugin "^0.11.6"
+
 gatsby-plugin-mdx@^2.12.0:
   version "2.12.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-mdx/-/gatsby-plugin-mdx-2.12.0.tgz#4d6c31bb73aee955a25aa35499996f66e23d53f6"
@@ -9235,6 +9244,13 @@ lockfile@^1.0:
   integrity sha512-cvbTwETRfsFh4nHsL1eGWapU1XFi5Ot9E85sWAwia7Y7EgB7vfqcZhTKZ+l7hCGxSPoushMv5GKhT5PdLv03WA==
   dependencies:
     signal-exit "^3.0.2"
+
+lodash-webpack-plugin@^0.11.6:
+  version "0.11.6"
+  resolved "https://registry.yarnpkg.com/lodash-webpack-plugin/-/lodash-webpack-plugin-0.11.6.tgz#8204c6b78beb62ce5211217dfe783c21557ecd33"
+  integrity sha512-nsHN/+IxZK/C425vGC8pAxkKJ8KQH2+NJnhDul14zYNWr6HJcA95w+oRR7Cp0oZpOdMplDZXmjVROp8prPk7ig==
+  dependencies:
+    lodash "^4.17.20"
 
 lodash.assignin@^4.0.9:
   version "4.2.0"

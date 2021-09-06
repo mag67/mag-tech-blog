@@ -5,7 +5,11 @@ exports.createPages = async ({ graphql, actions }) => {
   const result = await graphql(`
     query {
       allMarkdownRemark {
-        nodes {
+        tagsGroup: group(field: frontmatter___tags) {
+          tag: fieldValue
+        }
+        postsRemark: nodes {
+          id
           frontmatter {
             slug
           }
@@ -14,13 +18,25 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `);
 
-  result.data.allMarkdownRemark.nodes.forEach(({ frontmatter: { slug } }) => {
+  // pages
+  result.data.allMarkdownRemark.postsRemark.forEach(
+    ({ frontmatter: { slug } }) => {
+      createPage({
+        path: slug,
+        component: path.resolve(`./src/templates/post.tsx`),
+        context: {
+          slug: slug,
+        },
+      });
+    },
+  );
+
+  // tags
+  result.data.allMarkdownRemark.tagsGroup.forEach(({ tag }) => {
     createPage({
-      path: slug,
-      component: path.resolve(`./src/templates/post.tsx`),
-      context: {
-        slug: slug,
-      },
+      path: `blog/tags/${tag}`,
+      component: path.resolve('./src/templates/tag.tsx'),
+      context: { tag: tag },
     });
   });
 };
