@@ -1,5 +1,4 @@
 import { VFC } from 'react';
-import { css } from '@emotion/react';
 import Layout from '../components/layout';
 
 const IndexPage: VFC = () => (
@@ -26,7 +25,3 @@ const IndexPage: VFC = () => (
 );
 
 export default IndexPage;
-
-const head = css`
-  color: black;
-`;

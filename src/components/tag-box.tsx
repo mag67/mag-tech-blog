@@ -1,11 +1,16 @@
+import { VFC } from 'react';
 import { css } from '@emotion/react';
 import Tag from './tag';
 
-const TagBox = ({ group }) => (
+type Props = {
+  group: [{ tag: string; totalCount: number }];
+};
+
+const TagBox: VFC<Props> = ({ group }) => (
   <div css={[boxSize, isFlexed]}>
     {group.map(({ tag, totalCount }) => (
       <div css={position}>
-        <Tag name={tag} />×{totalCount}
+        <Tag category={tag} />×{totalCount}
       </div>
     ))}
   </div>

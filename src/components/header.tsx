@@ -1,8 +1,9 @@
+import { VFC } from 'react';
 import { css } from '@emotion/react';
 import NavTop from './nav-top';
 import NavMenu from './nav-menu';
 
-const Header = () => (
+const Header: VFC = () => (
   <header css={[header, isFixed]}>
     <NavTop />
     <NavMenu />

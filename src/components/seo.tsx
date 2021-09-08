@@ -1,17 +1,27 @@
+import { VFC } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 
-const SEO: FC = ({ siteMetaData }) => (
-  <Helmet>
-    <title>{siteMetaData.title}</title>
-    <meta name="description" content={siteMetaData.description} />
-    <meta charSet="utf-8" />
-  </Helmet>
+type Props = {
+  title: string;
+  description: string;
+};
+
+const SEO: VFC<Props> = ({ title, description }) => (
+  <HelmetProvider>
+    <Helmet>
+      <title>{title}</title>
+      <meta name="description" content={description} />
+      <meta charSet="utf-8" />
+    </Helmet>
+  </HelmetProvider>
 );
 
-const SEOwithQuery: FC = () => {
+const SEOwithQuery: VFC = () => {
   const {
-    site: { siteMetadata },
+    site: {
+      siteMetadata: { title, description },
+    },
   } = useStaticQuery<GatsbyTypes.siteMetaDataQuery>(graphql`
     query siteMetaData {
       site {
@@ -23,7 +33,12 @@ const SEOwithQuery: FC = () => {
     }
   `);
 
-  return <SEO siteMetaData={siteMetadata} />;
+  return (
+    <SEO
+      title={typeof title === 'string' ? title : ''}
+      description={typeof description === 'string' ? description : ''}
+    />
+  );
 };
 
 export default SEOwithQuery;

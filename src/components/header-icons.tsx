@@ -1,10 +1,10 @@
+import { VFC } from 'react';
 import { Link } from 'gatsby';
 import { css } from '@emotion/react';
-
 import { GoMarkGithub } from 'react-icons/go';
 import { GiCoffeeCup, GiCakeSlice } from 'react-icons/gi';
 
-const HeaderIcons = () => (
+const HeaderIcons: VFC = () => (
   <div>
     <ul css={menu}>
       <li css={menuList}>

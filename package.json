@@ -4,6 +4,7 @@
   "private": true,
   "description": "mag-tech-blog",
   "author": "yusaku.komuro",
+  "license": "MIT",
   "keywords": [
     "gatsby"
   ],

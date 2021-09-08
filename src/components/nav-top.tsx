@@ -1,8 +1,9 @@
+import { VFC } from 'react';
 import { css } from '@emotion/react';
 import SiteLogo from './site-logo';
 import HeaderIcons from './header-icons';
 
-const NavTop = () => (
+const NavTop: VFC = () => (
   <div css={[navTop, background]}>
     <SiteLogo />
     <HeaderIcons />

@@ -1,17 +1,36 @@
+import { VFC } from 'react';
 import { Link } from 'gatsby';
 import { css } from '@emotion/react';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import Tags from './tags';
 
-const Blog = ({ slug, title, image, image_alt, tags, description }) => (
+type Props = {
+  slug: string;
+  title: string;
+  gatsbyImageData?: IGatsbyImageData;
+  imageAlt: string;
+  tags: [string];
+  description: string;
+};
+
+const Post: VFC<Props> = ({
+  slug,
+  title,
+  gatsbyImageData,
+  imageAlt,
+  tags,
+  description,
+}) => (
   <article css={card}>
     <Link to={slug} css={linkStyleOff}>
       <h2 css={headingTitle}>{title}</h2>
     </Link>
     <Tags tagNames={tags} />
-    <Link to={slug} css={linkStyleOff}>
-      <GatsbyImage image={getImage(image)} alt={image_alt} css={img} />
-    </Link>
+    {gatsbyImageData && (
+      <Link to={slug} css={linkStyleOff}>
+        <GatsbyImage image={gatsbyImageData} alt={imageAlt} css={img} />
+      </Link>
+    )}
     <Link to={slug} css={linkStyleOff}>
       <p>{description}</p>
     </Link>
@@ -42,4 +61,4 @@ const img = css`
   max-width: 100%;
   margin-bottom: 2vh;
 `;
-export default Blog;
+export default Post;

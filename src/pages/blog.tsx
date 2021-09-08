@@ -1,23 +1,22 @@
 import { VFC } from 'react';
-import { css } from '@emotion/react';
-import { graphql } from 'gatsby';
-import Blogs from '../components/blogs';
+import { graphql, PageProps } from 'gatsby';
+import Posts from '../components/posts';
 import Layout from '../components/layout';
 import TagBox from '../components/tag-box';
 
-const BlogPage: VFC = ({
+const BlogPage: VFC<PageProps<GatsbyTypes.PostIndexQuery>> = ({
   data: {
     allMarkdownRemark: { tagsGroup, blogs },
   },
 }) => (
   <Layout>
     <TagBox group={tagsGroup} />
-    <Blogs edges={blogs} />
+    <Posts edges={blogs} />
   </Layout>
 );
 
 export const allBlogs = graphql`
-  query AllTagandBlog {
+  query PostIndex {
     allMarkdownRemark {
       tagsGroup: group(field: frontmatter___tags) {
         tag: fieldValue

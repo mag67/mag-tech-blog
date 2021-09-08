@@ -1,7 +1,8 @@
+import { VFC } from 'react';
 import { Link } from 'gatsby';
 import { css } from '@emotion/react';
 
-const SiteLogo = () => (
+const SiteLogo: VFC = () => (
   <div css={siteTitle}>
     <Link to="/" css={logo}>
       mag-tech-blog
