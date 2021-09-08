@@ -3,7 +3,7 @@ slug: "/blog/my-first-post"
 date: "2019-05-04"
 title: "メタプログラミングRuby入門ですメタプログラミング"
 image: "./MetaprogrammingRuby2.jpeg"
-image_alt: "俺です"
+imageAlt: "俺です"
 description: "メタプログラミングRuby入門ですメタプログラミング" 
 tags: ["Blog","Ruby","RubyonRails"]
 ---

@@ -1,7 +1,7 @@
-import { Link } from 'gatsby';
+import { VFC } from 'react';
 import { css } from '@emotion/react';
 
-const Footer = () => <footer css={footer}>footer</footer>;
+const Footer: VFC = () => <footer css={footer}>footer</footer>;
 
 const footer = css`
   background-color: hsl(45, 80%, 65%);

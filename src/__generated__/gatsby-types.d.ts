@@ -394,7 +394,7 @@ type MarkdownRemarkFrontmatter = {
   readonly slug: Maybe<Scalars['String']>;
   readonly date: Maybe<Scalars['Date']>;
   readonly image: Maybe<File>;
-  readonly image_alt: Maybe<Scalars['String']>;
+  readonly imageAlt: Maybe<Scalars['String']>;
   readonly description: Maybe<Scalars['String']>;
   readonly tags: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
 };
@@ -1193,7 +1193,7 @@ type MarkdownRemarkFrontmatterFilterInput = {
   readonly slug: Maybe<StringQueryOperatorInput>;
   readonly date: Maybe<DateQueryOperatorInput>;
   readonly image: Maybe<FileFilterInput>;
-  readonly image_alt: Maybe<StringQueryOperatorInput>;
+  readonly imageAlt: Maybe<StringQueryOperatorInput>;
   readonly description: Maybe<StringQueryOperatorInput>;
   readonly tags: Maybe<StringQueryOperatorInput>;
 };
@@ -1489,7 +1489,7 @@ type FileFieldsEnum =
   | 'childrenMarkdownRemark.frontmatter.image.childrenImageSharp'
   | 'childrenMarkdownRemark.frontmatter.image.id'
   | 'childrenMarkdownRemark.frontmatter.image.children'
-  | 'childrenMarkdownRemark.frontmatter.image_alt'
+  | 'childrenMarkdownRemark.frontmatter.imageAlt'
   | 'childrenMarkdownRemark.frontmatter.description'
   | 'childrenMarkdownRemark.frontmatter.tags'
   | 'childrenMarkdownRemark.excerpt'
@@ -1586,7 +1586,7 @@ type FileFieldsEnum =
   | 'childMarkdownRemark.frontmatter.image.childrenImageSharp'
   | 'childMarkdownRemark.frontmatter.image.id'
   | 'childMarkdownRemark.frontmatter.image.children'
-  | 'childMarkdownRemark.frontmatter.image_alt'
+  | 'childMarkdownRemark.frontmatter.imageAlt'
   | 'childMarkdownRemark.frontmatter.description'
   | 'childMarkdownRemark.frontmatter.tags'
   | 'childMarkdownRemark.excerpt'
@@ -2938,7 +2938,7 @@ type MarkdownRemarkFieldsEnum =
   | 'frontmatter.image.internal.mediaType'
   | 'frontmatter.image.internal.owner'
   | 'frontmatter.image.internal.type'
-  | 'frontmatter.image_alt'
+  | 'frontmatter.imageAlt'
   | 'frontmatter.description'
   | 'frontmatter.tags'
   | 'excerpt'
@@ -3794,26 +3794,26 @@ type SiteBuildMetadataSortInput = {
   readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>;
 };
 
-type userskomuroyuusakuworkspacemagTechBlogsrctemplatespostTsx1250348784QueryVariables = Exact<{
+type AllPostPageQueryVariables = Exact<{
   slug: Scalars['String'];
 }>;
 
 
-type userskomuroyuusakuworkspacemagTechBlogsrctemplatespostTsx1250348784Query = { readonly markdownRemark: Maybe<(
+type AllPostPageQuery = { readonly markdownRemark: Maybe<(
     Pick<MarkdownRemark, 'html'>
     & { readonly frontmatter: Maybe<(
-      Pick<MarkdownRemarkFrontmatter, 'date' | 'tags' | 'title' | 'image_alt' | 'slug'>
+      Pick<MarkdownRemarkFrontmatter, 'date' | 'tags' | 'title' | 'imageAlt' | 'slug'>
       & { readonly image: Maybe<{ readonly childrenImageSharp: Maybe<ReadonlyArray<Maybe<Pick<ImageSharp, 'gatsbyImageData'>>>> }> }
     )> }
   )> };
 
-type userskomuroyuusakuworkspacemagTechBlogsrctemplatestagTsx731570395QueryVariables = Exact<{
+type AllTagPageQueryVariables = Exact<{
   tag: Scalars['String'];
 }>;
 
 
-type userskomuroyuusakuworkspacemagTechBlogsrctemplatestagTsx731570395Query = { readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: Maybe<(
-          Pick<MarkdownRemarkFrontmatter, 'title' | 'tags' | 'slug' | 'image_alt' | 'description'>
+type AllTagPageQuery = { readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: Maybe<(
+          Pick<MarkdownRemarkFrontmatter, 'title' | 'tags' | 'slug' | 'imageAlt' | 'description'>
           & { readonly image: Maybe<{ readonly childImageSharp: Maybe<Pick<ImageSharp, 'gatsbyImageData'>> }> }
         )> } }> } };
 
@@ -3822,10 +3822,10 @@ type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 type PagesQueryQuery = { readonly allSiteFunction: { readonly nodes: ReadonlyArray<Pick<SiteFunction, 'functionRoute'>> }, readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
 
-type AllTagandBlogQueryVariables = Exact<{ [key: string]: never; }>;
+type PostIndexQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type AllTagandBlogQuery = { readonly allMarkdownRemark: { readonly tagsGroup: ReadonlyArray<(
+type PostIndexQuery = { readonly allMarkdownRemark: { readonly tagsGroup: ReadonlyArray<(
       Pick<MarkdownRemarkGroupConnection, 'totalCount'>
       & { tag: MarkdownRemarkGroupConnection['fieldValue'] }
     )>, readonly blogs: ReadonlyArray<{ readonly node: { readonly frontmatter: Maybe<(

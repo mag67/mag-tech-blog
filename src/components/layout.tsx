@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { VFC, ReactNode } from 'react';
 import { css } from '@emotion/react';
 import { HelmetProvider } from 'react-helmet-async';
 import SEO from './seo';
@@ -6,10 +6,10 @@ import Header from './header';
 import Footer from './footer';
 
 type Props = {
-  children: any;
+  children: ReactNode;
 };
 
-const Layout: FC<Props> = ({ children }) => (
+const Layout: VFC<Props> = ({ children }) => (
   <HelmetProvider>
     <SEO />
     <Header />

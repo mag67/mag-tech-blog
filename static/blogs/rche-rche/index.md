@@ -3,7 +3,7 @@ slug: "/blog/rche-rche"
 date: "2019-07-31"
 title: "大阪　ルシェルシェ"
 image: "./rche-rche.jpg"
-image_alt: "俺です"
+imageAlt: "俺です"
 description: "my favorite cake!!!!!!!!!!!!!!" 
 tags: ["Blog","Sweets"]
 ---

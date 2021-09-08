@@ -1,0 +1,16 @@
+name: CI
+on: [push]
+jobs:
+  CI:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v2
+      with:
+        cache: 'npm'
+    - name: yarn install
+      run: yarn install
+    - name: yarn add package
+      run: yarn add --dev typescript
+    - name: yarn lint
+      run: yarn lint
