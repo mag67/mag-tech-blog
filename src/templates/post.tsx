@@ -1,33 +1,31 @@
+import { VFC } from 'react';
 import { css } from '@emotion/react';
-import { graphql } from 'gatsby';
+import { graphql, PageProps } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Tags from '../components/tags';
 import Layout from '../components/layout';
 
-const PostPage = ({
-  data: {
-    markdownRemark: {
-      html,
-      frontmatter: { title, tags, image, image_alt },
-    },
-  },
-}) => (
+const PostPage: VFC<PageProps<GatsbyTypes.AllPostPageQuery>> = ({ data }) => (
   <Layout>
     <div css={[flame, isFlexed]}>
-      <h1>{title}</h1>
-      <Tags tagNames={tags} />
+      <h1>{data?.markdownRemark?.frontmatter?.title && ''}</h1>
+      <Tags tagNames={data?.markdownRemark?.frontmatter?.tags} />
       <GatsbyImage
-        image={getImage(image.childrenImageSharp[0])}
-        alt={image_alt}
+        image={getImage(
+          data?.markdownRemark?.frontmatter?.image?.childrenImageSharp[0],
+        )}
+        alt={data?.markdownRemark?.frontmatter?.imageAlt}
         css={img}
       />
-      <div dangerouslySetInnerHTML={{ __html: html }} />
+
+      {/* eslint-disable react/no-danger */}
+      <div dangerouslySetInnerHTML={{ __html: data?.markdownRemark?.html }} />
     </div>
   </Layout>
 );
 
 export const query = graphql`
-  query ($slug: String!) {
+  query AllPostPage($slug: String!) {
     markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       frontmatter {
         date
@@ -38,7 +36,7 @@ export const query = graphql`
         }
         tags
         title
-        image_alt
+        imageAlt
         slug
       }
       html

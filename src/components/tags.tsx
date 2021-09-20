@@ -1,19 +1,22 @@
+import { VFC } from 'react';
 import { css } from '@emotion/react';
 import Tag from './tag';
 
-const Tags = ({ tagNames }) => (
-  <div css={tags}>
+type Props = {
+  tagNames: [string];
+};
+
+const Tags: VFC<Props> = ({ tagNames }) => (
+  <div>
     <ul css={[list, isFlexed]}>
       {tagNames.map((name) => (
         <li css={tag}>
-          <Tag name={name} />
+          <Tag category={name} />
         </li>
       ))}
     </ul>
   </div>
 );
-
-const tags = css``;
 
 const list = css`
   padding-left: 0;

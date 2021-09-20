@@ -1,7 +1,8 @@
+import { VFC } from 'react';
 import { Link } from 'gatsby';
 import { css } from '@emotion/react';
 
-const NavMenu = () => (
+const NavMenu: VFC = () => (
   <div css={navMenu}>
     <nav>
       <ul css={menu}>
